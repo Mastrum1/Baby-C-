@@ -26,6 +26,7 @@ int main(int argc, char* args[])
 	}
 	else
 	{
+		TTF_Init();
 		//Create window
 		window = SDL_CreateWindow("Baby App", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if (window == NULL)
@@ -48,6 +49,14 @@ int main(int argc, char* args[])
 
 	App* app = new App(renderer);
 
+	TTF_Font* font = TTF_OpenFont("BebasNeue.ttf", 25);
+
+	SDL_Color color = { 0, 0, 0 };
+	SDL_Surface* surface = TTF_RenderText_Solid(font,
+		"Welcome to Programmer's Ranch", color);
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer,
+		surface);
+
 	app->createContainer(renderer, 0, 0, 32, 32, 0, 255, 255, false);
 	app->createContainer(renderer, 100, 100, 320, 32, 0, 255, 255, true);
 
@@ -58,10 +67,14 @@ int main(int argc, char* args[])
 		app->render();
 	}
 
-	//Destroy window
+	TTF_CloseFont(font);
+
+	//Destroy window and renderer
+	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 
 	//Quit SDL subsystems
+	TTF_Quit();
 	SDL_Quit();
 
 	return 0;
