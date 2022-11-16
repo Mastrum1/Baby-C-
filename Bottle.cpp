@@ -2,7 +2,7 @@
 #include "Bottle.h"
 
 
-Bottle::Bottle(int capacity,int filledAt, bool isEmpty, int rest) {
+Bottle::Bottle(int capacity = 250, int filledAt = 0, bool isEmpty = true, int rest = 0) {
 	this->capacity = capacity;
 	this->filledAt = filledAt;
 	this->isEmpty = isEmpty;

@@ -2,7 +2,7 @@
 #include "Stock.h"
 
 
-Stock::Stock(int milkQuantity) {
+Stock::Stock(int milkQuantity = 0) {
 	this->milkQuantity = milkQuantity;
 }
 

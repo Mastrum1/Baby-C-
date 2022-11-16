@@ -4,7 +4,7 @@
 class Bottle
 {
 public:
-	Bottle(int capacity = 250, int filledAt = 0, bool isEmpty = true, int rest = 0);
+	Bottle(int capacity, int filledAt, bool isEmpty, int rest);
 	~Bottle();
 	int getCapacity();
 	int getFilledAt();
