@@ -35,3 +35,7 @@ void Items::addItemQuantity(int value) {
 void Items::removeItemQuantity(int value) {
 	this->quantity -= value;
 }
+
+void Items::changeItemId(int value) {
+	this->id = value;
+}

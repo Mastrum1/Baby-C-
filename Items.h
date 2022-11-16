@@ -12,6 +12,7 @@ public:
 	void changeItemQuantity(int value);
 	void addItemQuantity(int value);
 	void removeItemQuantity(int value);
+	void changeItemId(int value);
 
 private:
 	int id; 

@@ -6,8 +6,7 @@
 
 using namespace std; 
 
-List::List()
-{
+List::List(){
 	this->id = 0;
 }
 
@@ -24,9 +23,11 @@ void List::clearList() {
 }
 
 void List::removeFromList(int id) {
-	if (this->id<id){
-		this->id = this->id;
-	} else {
-		shoppingList.erase(id);
-	}
+	if (id < shoppingList.size()) {
+		Items tmp = shoppingList[id];
+		shoppingList[id] = shoppingList[shoppingList.size() - 1];
+		shoppingList[id].changeItemId(id);
+		shoppingList[shoppingList.size() - 1] = tmp;
+		shoppingList.pop_back();
+	} 
 }

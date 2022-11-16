@@ -132,14 +132,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="App.cpp" />
     <ClCompile Include="Bottle.cpp" />
+    <ClCompile Include="Container.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="App.h" />
     <ClInclude Include="Bottle.h" />
+    <ClInclude Include="Container.h" />
     <ClInclude Include="Items.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Stock.h" />
