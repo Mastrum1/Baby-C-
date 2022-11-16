@@ -54,7 +54,7 @@ void App::render()
 	SDL_RenderPresent(renderer);
 }
 
-void App::createContainer(SDL_Renderer* renderer, int x, int y, int w, int h)
+void App::createContainer(SDL_Renderer* renderer, int x, int y, int w, int h, int r, int g, int b, bool isButton)
 {
-	this->containerList.push_back(Container::Container(this, renderer, x, y, w, h));
+	this->containerList.push_back(Container::Container(this, renderer, x, y, w, h, r, g, b, isButton));
 }

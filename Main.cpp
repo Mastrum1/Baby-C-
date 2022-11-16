@@ -1,12 +1,13 @@
 //Using SDL and standard IO
 #include <SDL.h>
 #include <stdio.h>
+#include <SDL_ttf.h>
 
 #include "App.h"
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 840;
+const int SCREEN_HEIGHT = 680;
 
 int main(int argc, char* args[])
 {
@@ -47,8 +48,8 @@ int main(int argc, char* args[])
 
 	App* app = new App(renderer);
 
-	app->createContainer(renderer, 0, 0, 32, 32);
-	app->createContainer(renderer, 100, 100, 32, 32);
+	app->createContainer(renderer, 0, 0, 32, 32, 0, 255, 255, false);
+	app->createContainer(renderer, 100, 100, 320, 32, 0, 255, 255, true);
 
 	while (app->running)
 	{
