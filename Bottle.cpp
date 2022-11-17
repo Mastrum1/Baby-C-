@@ -1,12 +1,11 @@
 #include <iostream>
 #include "Bottle.h"
 
-
-Bottle::Bottle(int capacity = 250, int filledAt = 0, bool isEmpty = true, int rest = 0) {
-	this->capacity = capacity;
-	this->filledAt = filledAt;
-	this->isEmpty = isEmpty;
-	this->rest = rest;
+Bottle::Bottle() {
+	this->capacity = 250;
+	this->filledAt = 0;
+	this->isEmpty = true;
+	this->rest = 0;
 }
 
 Bottle::~Bottle()

@@ -49,16 +49,19 @@ int main(int argc, char* args[])
 
 	App* app = new App(renderer);
 
-	TTF_Font* font = TTF_OpenFont("BebasNeue.ttf", 25);
+	Items papierQ(0, "PapierQ", 2);
+	app->list.addToList(papierQ);
+	cout << papierQ.getItemName() << endl;
+	app->bottle.filler(250);
+	cout << app->bottle.getFilledAt() << endl;
 
-	SDL_Color color = { 0, 0, 0 };
-	SDL_Surface* surface = TTF_RenderText_Solid(font,
-		"Welcome to Programmer's Ranch", color);
-	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer,
-		surface);
-
-	app->createContainer(renderer, 0, 0, 32, 32, 0, 255, 255, false);
-	app->createContainer(renderer, 100, 100, 320, 32, 0, 255, 255, true);
+	app->createContainer(renderer, 0, "", 0, 0, 840, 680, 0, 0, 0, false, false);
+	app->createContainer(renderer, 0, "Liste de course", 0, 0, 230, 40, 255, 255, 255, false, true);
+	app->createContainer(renderer, 1, "", 0, 0, 230, 680, 0, 0, 0, false, false);
+	app->createContainer(renderer, 2, "Valider", 10, 635, 210, 30, 0, 0, 0, true, false);
+	app->createContainer(renderer, 3, "Prendre Biberon", 240, 635, 300, 30, 0, 0, 0, true, false);
+	app->createContainer(renderer, 4, "Biberon Vomit", 550, 635, 280, 30, 0, 0, 0, true, false);
+	
 
 	while (app->running)
 	{
@@ -66,8 +69,6 @@ int main(int argc, char* args[])
 		app->update();
 		app->render();
 	}
-
-	TTF_CloseFont(font);
 
 	//Destroy window and renderer
 	SDL_DestroyRenderer(renderer);

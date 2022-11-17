@@ -4,6 +4,7 @@
 App::App(SDL_Renderer* renderer)
 {
 	this->renderer = renderer;
+
 }
 
 App::~App()
@@ -38,9 +39,13 @@ void App::handleEvent()
 
 void App::update()
 {
-	/*cout << "x: " << this->mouseX << endl;
-	cout << "y: " << this->mouseY << endl;
-	cout << "lClick: " << this->lClick << endl;*/
+	if (lClick)
+	{
+		cout << "x: " << this->mouseX << endl;
+		cout << "y: " << this->mouseY << endl;
+		cout << "lClick: " << this->lClick << endl;
+		cout << "bib quant" << this->bottle.getFilledAt();
+	}
 }
 
 void App::render()
@@ -54,7 +59,7 @@ void App::render()
 	SDL_RenderPresent(renderer);
 }
 
-void App::createContainer(SDL_Renderer* renderer, int x, int y, int w, int h, int r, int g, int b, bool isButton)
+void App::createContainer(SDL_Renderer* renderer,int id, const char* title, int x, int y, int w, int h, int r, int g, int b, bool isButton, bool isFilled)
 {
-	this->containerList.push_back(Container::Container(this, renderer, x, y, w, h, r, g, b, isButton));
+	this->containerList.push_back(Container::Container(this, renderer, id, title, x, y, w, h, r, g, b, isButton, isFilled));
 }

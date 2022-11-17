@@ -11,8 +11,10 @@ public:
 	void addToList(Items item);
 	void clearList();
 	void removeFromList(int id);
-
+	Items getItemNameFromList(int id);
+	
+	std::vector<Items> shoppingList;
 private:
 	int id;
-	std::vector<Items> shoppingList;
+	
 };
