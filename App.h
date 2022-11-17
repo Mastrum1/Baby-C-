@@ -5,6 +5,8 @@
 #include "Container.h"
 #include "List.h"
 #include "Bottle.h"
+#include "Stock.h"
+#include "Items.h"
 
 using namespace std;
 
@@ -22,6 +24,8 @@ public:
 
 	Bottle bottle;
 	List list;
+	Stock stock;
+	Items Milk;
 	
 	bool running = true;
 	int mouseX, mouseY;

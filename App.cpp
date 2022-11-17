@@ -1,16 +1,15 @@
 #include <iostream>
 #include "App.h"
 
-App::App(SDL_Renderer* renderer)
-{
+App::App(SDL_Renderer* renderer){
 	this->renderer = renderer;
-
 }
 
 App::~App()
 {
 }
 
+// CHECK FOR EVENT
 void App::handleEvent()
 {
 	SDL_Event event;
@@ -18,22 +17,22 @@ void App::handleEvent()
 	{
 		switch (event.type) {
 		case SDL_QUIT:
-			this->running = false;
+			this->running = false; //SDL quit window
 			break;
 		case SDL_MOUSEMOTION:
-			SDL_GetMouseState(&this->mouseX, &this->mouseY);
+			SDL_GetMouseState(&this->mouseX, &this->mouseY); //Mouse pose
 			break;
 		case SDL_MOUSEBUTTONDOWN:
-			if (event.button.button == SDL_BUTTON_LEFT) this->lClick = true;
+			if (event.button.button == SDL_BUTTON_LEFT) this->lClick = true; //Mouse left click pressed
 			break;
 		case SDL_MOUSEBUTTONUP:
-			if (event.button.button == SDL_BUTTON_LEFT) this->lClick = false;
+			if (event.button.button == SDL_BUTTON_LEFT) this->lClick = false; //Mouse left click unpressed
 			break;
 		}
 	}
 	for (auto i = 0; i < this->containerList.size(); i++)
 	{
-		this->containerList[i].handleEvent();
+		this->containerList[i].handleEvent(); //Check if in button
 	}
 }
 
@@ -41,10 +40,11 @@ void App::update()
 {
 	if (lClick)
 	{
-		cout << "x: " << this->mouseX << endl;
-		cout << "y: " << this->mouseY << endl;
-		cout << "lClick: " << this->lClick << endl;
-		cout << "bib quant" << this->bottle.getFilledAt();
+		//cout << "x: " << this->mouseX << endl; //Mouse X position in console
+		//cout << "y: " << this->mouseY << endl; //Mouse y position in console
+		//cout << "lClick: " << this->lClick << endl; //Left button click in console
+		cout << "bib quant" << this->bottle.getFilledAt() << endl; // Milk quantity in bottle
+		cout << "stock" << this->stock.getStockQuantity() << endl; // QIantity of milk in stock
 	}
 }
 

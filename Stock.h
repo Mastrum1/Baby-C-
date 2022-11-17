@@ -4,7 +4,7 @@
 class Stock
 {
 public:
-	Stock(int milkQuantity );
+	Stock();
 	~Stock();
 	int getStockQuantity();
 	void setMilkQuantity(int value);

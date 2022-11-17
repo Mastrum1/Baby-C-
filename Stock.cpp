@@ -2,8 +2,8 @@
 #include "Stock.h"
 
 
-Stock::Stock(int milkQuantity = 0) {
-	this->milkQuantity = milkQuantity;
+Stock::Stock() {
+	this->milkQuantity = 0;
 }
 
 Stock::~Stock()

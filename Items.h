@@ -4,7 +4,7 @@
 class Items
 {
 public:
-	Items(int id, const char* name, int quantity);
+	Items();
 	~Items();
 	int getItemId();
 	const char* getItemName();

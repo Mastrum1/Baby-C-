@@ -2,10 +2,10 @@
 #include "Items.h"
 
 
-Items::Items(int id, const char* name, int quantity = 0) {
-	this->id = id; 
-	this->name = name; 
-	this->quantity = quantity; 
+Items::Items() {
+	this->id = 0; 
+	this->name = "Milk";
+	this->quantity = 0; 
 }
 
 Items::~Items()
