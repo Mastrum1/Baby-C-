@@ -55,6 +55,7 @@ void Container::handleEvent()
 				this->app->list.clearList(); //clear list
 				this->app->list.addToList(app->Milk); //reset item Milk on list
 				this->app->Milk.changeItemQuantity(0); //reset quantity of milk to add
+				this->app->lClick = false;
 				break;
 			case(3) : // CHECK IF "BIBERON PRIT" BUTTON IS PRESSED
 				this->app->bottle.drinked(this->app->bottle.getCapacity()); //reset milk quantity in bottle to 0
